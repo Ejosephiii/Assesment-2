@@ -23,6 +23,12 @@
 
 //CODE HERE
 
+const greetUser = () => {
+    let username = "USERNAME"
+    console.log(`Welcome back ${username}`)
+}
+greetUser()
+
 
 
 
@@ -51,7 +57,16 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 
 //CODE HERE
 
+const canWeDeliver = (zipcode) => {
+    if(zipcode === deliveryAreaZipCodes.length) {
+        console.log("you are elligble for delivery")
+    } else {
+        console.log("you are not elligble for delivery")
+    }
+}
 
+
+canWeDeliver(85204)
 
 /* 
     Problem 2 Continued
@@ -71,8 +86,13 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 */
 
 // CODE HERE
-
-
+const canWeDeliverTwo =(zipcode) => {
+    if(zipcode.includes(deliveryAreaZipCodes.length)) {
+        console.log("you are elligble for delivery")
+    } else {
+        console.log("you are not elligble for delivery")
+    }
+}
 //////////////////PROBLEM 3////////////////////
 /* 
     Below is an array of objects that have some
@@ -108,7 +128,7 @@ const deals = [
 
 //CODE HERE
 
-
+deals[0].title = deals[0].title.replace("15", "10")
 
 /*
     The restaurant is going to continue its
@@ -124,3 +144,4 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.replace("March", "April")

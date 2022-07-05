@@ -30,19 +30,18 @@
 */
 
 //CODE HERE
-
-class Ticket {
-    constructor(items, orderTime, customerId,queued){
-    this.items = items
-    this.orderTime = orderTime
-    this.customerId = customerId
-    this.status = queued
-    } function updateStatus(newStatus){
-        this.status = updateStatus()
-        return `the order for customer${customerId} is now ${status}`
-        } 
+ class Ticket {
+    constructor(items, orderTime, customerId) {
+        this.items = items
+        this.orderTime = orderTime
+        this.customerId = customerId
+        this.status = "queued"
+    } updateStatus(newStatus) {
+        this.status.value = newStatus
     }
-}  
+
+ }
+
 /*
     Create a new instance of your class.
     Save it to a variable called `firstTicket`.
@@ -62,4 +61,4 @@ let firstTicket = new Ticket()
     `firstTicket` passing in the string
     'cooking'
 */
-updateStatus(cooking)
+updateStatus(firstTicket(cooking))

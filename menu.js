@@ -61,7 +61,7 @@ console.log(pizza.popularity)
 
 //CODE HERE
 
-console.log(pizza.tags)
+console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -71,7 +71,8 @@ console.log(pizza.tags)
 */
 
 //CODE HERE
-
+ let myPrice = pizza.price
+ console.log(myPrice)
 
 /*
     Fourth, and last, destructure the category
@@ -81,8 +82,8 @@ console.log(pizza.tags)
 */
 
 //CODE HERE
- let  {price} = pizza
- console.log(price)
+ let myCategory = pizza.category
+ console.log(myCategory)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -100,7 +101,7 @@ console.log(pizza.tags)
 
 let foodArr = [{
     name : "cheese",
-    price : 10,
+    price : 13,
     category: "entree",
     popularity : 8,
     rating : 10,
@@ -108,33 +109,33 @@ let foodArr = [{
 },
 {
     name : "sausage",
-    price : 10,
+    price : 8,
     category: "entree",
-    popularity : 8,
+    popularity : 3,
     rating : 10,
     tags : ["cheesy", "gooey", "yummy"]
 },
 {
     name : "hawaiian",
-    price : 10,
+    price : 15,
     category: "entree",
-    popularity : 8,
+    popularity : 10,
     rating : 10,
     tags : ["cheesy", "gooey", "yummy"]
 },
 {
     name : "bacon",
-    price : 10,
+    price : 7,
     category: "entree",
-    popularity : 8,
+    popularity : 9,
     rating : 10,
     tags : ["cheesy", "gooey", "yummy"]
 },
 {
     name : "ham",
-    price : 10,
+    price : 4,
     category: "entree",
-    popularity : 8,
+    popularity : 1,
     rating : 10,
     tags : ["cheesy", "gooey", "yummy"]
 }
@@ -154,7 +155,11 @@ let foodArr = [{
 
 //CODE HERE
 
-const filteredFood = foodArr.filter(foodArr.tags)
+const filteredFood = foodArr.filter((food) =>{
+    if(food.tags.includes("cheesy")) {
+        return food;
+    }
+})
 
 
 
@@ -201,12 +206,15 @@ const filteredFood = foodArr.filter(foodArr.tags)
 
 //CODE HERE
 
-function filterByProperty(property, number, type){
-this.property = property
-this.number = number
-this.type = type
-let foodArray = foodArr.filter
-
+const filterByProperty = (property, number, type) => {
+    let filteredFood = foodArr.filter((food) =>{
+        if (type === "above") {
+            return food[property] > number
+        }  else if(type === "below"){
+                return food[property] <= number
+        }
+    })
+    return filteredFood
 }
 
 /*
@@ -218,4 +226,4 @@ let foodArray = foodArr.filter
 
 //CODE HERE
 
-filterByProperty(10, 1, above)
+filterByProperty("popularity", 2, "above")

@@ -35,14 +35,8 @@ const cart = [
 
 //CODE HERE
 
-cb(){
-    name1 + name2 + name3
-}
-
-
-
-// const summedPrice = cart.reduce(/* CALLBACK HERE */)
-
+const summedPrice = cart.reduce(function (acc, obj){ return acc + obj.price;}, 0)
+console.log(summedPrice)
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -61,10 +55,12 @@ cb(){
 
 //CODE HERE
 
-function calcFinalPrice(cartTotal, couponValue, tax){
-    return cartTotal + tax - couponValue
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+ let finalNumber = cartTotal * tax - couponValue
+ console.log(finalNumber)
 }
 
+calcFinalPrice(9.99, .06, 1)
 //////////////////PROBLEM 3////////////////////
 /*  
     In this problem, you'll create a model for 
@@ -86,7 +82,6 @@ function calcFinalPrice(cartTotal, couponValue, tax){
 */
 
 
-    TEXT ANSWER HERE
 //A cart page would need pricing, tax, shipping/handling, checkout. Price is obvioiusly the initial price, tax and shipping is so they know how much more they're paying to receive product and get it shipped
 //checkout is so the customer can confirm their purchasePrice, tax, and shipping are all number data types because all represent a type of price the customer will be paying. checkout is a string because it doesn't hold a numerical value just a word you're reading to "buy" a product
 
