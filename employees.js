@@ -67,7 +67,10 @@ empOne.getSchedule()
 
 //CODE HERE
 
-let empTwo = JSON.parse(JSON.stringify(empOne))
+let empTwo = {...empOne}
+empTwo.name = "Jake"
+console.log(empTwo)
+
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -98,9 +101,21 @@ class Manager extends Employee {
     constructor(name, shifts, employees) {
         super(name,shifts)
 
-        this.employees = employees
-    } getEmployee
-}
+        this.employees = [employees]
+        
+    }
+    getEmployees () {
+        console.log(`${this.name} manages ${this.employees}`)
+    }
+    addEmployees(emp) {
+        console.log(typeof emp)
+        this.employees.push(emp)
+
+        // console.log("got here")
+        // console.log(this.employees)
+    }
+} 
+
 
 
 /*
@@ -116,7 +131,7 @@ class Manager extends Employee {
 
 //CODE HERE
 
-
+const manager = new Manager("Winston", "weekday mornings", "Cece and Schmidt")
 
 
 /*
@@ -126,6 +141,7 @@ class Manager extends Employee {
 
 //CODE HERE
 
+manager.getEmployees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -133,7 +149,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE 
-
+manager.addEmployees("Jake")
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -141,3 +157,4 @@ class Manager extends Employee {
 */
 
 //CODE HERE
+manager.getEmployees()

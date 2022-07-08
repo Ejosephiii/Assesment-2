@@ -36,7 +36,8 @@
         this.orderTime = orderTime
         this.customerId = customerId
         this.status = "queued"
-    } updateStatus(newStatus) {
+    } 
+    updateStatus(newStatus) {
         this.status.value = newStatus
     }
 
